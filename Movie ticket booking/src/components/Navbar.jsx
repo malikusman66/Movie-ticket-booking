@@ -6,7 +6,7 @@ import { UserButton, useClerk, useUser } from "@clerk/clerk-react";
 
 const Navbar = () => {
   const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
@@ -48,19 +48,54 @@ const Navbar = () => {
             alignItems: "center",
           }}
         >
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Home
           </Link>
-          <Link style={linkStyle} to="/movies">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/movies"
+          >
             Movies
           </Link>
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Theaters
           </Link>
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Releases
           </Link>
-          <Link style={linkStyle} to="/favorite">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/favorite"
+          >
             Favorites
           </Link>
         </div>
@@ -110,9 +145,9 @@ const Navbar = () => {
       {/* Mobile Menu toggle */}
       {isMobile && (
         <>
-          {menuOpen ? (
+          {isOpen ? (
             <XIcon
-              onClick={() => setMenuOpen(false)}
+              onClick={() => setIsOpen(false)}
               style={{
                 position: "absolute",
                 top: "1.5rem",
@@ -124,7 +159,7 @@ const Navbar = () => {
             />
           ) : (
             <MenuIcon
-              onClick={() => setMenuOpen(true)}
+              onClick={() => setIsOpen(true)}
               style={{
                 marginLeft: "1rem",
                 width: "2rem",
@@ -137,7 +172,7 @@ const Navbar = () => {
       )}
 
       {/* Mobile Nav */}
-      {isMobile && menuOpen && (
+      {isMobile && isOpen && (
         <div
           style={{
             position: "absolute",
@@ -153,19 +188,54 @@ const Navbar = () => {
             borderRadius: "0 0 1rem 1rem",
           }}
         >
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Home
           </Link>
-          <Link style={linkStyle} to="/movies">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/movies"
+          >
             Movies
           </Link>
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Theaters
           </Link>
-          <Link style={linkStyle} to="/">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/"
+          >
             Releases
           </Link>
-          <Link style={linkStyle} to="/favorite">
+          <Link
+            onClick={() => {
+              scrollTo(0, 0);
+              setIsOpen(false);
+            }}
+            style={linkStyle}
+            to="/favorite"
+          >
             Favorites
           </Link>
 
