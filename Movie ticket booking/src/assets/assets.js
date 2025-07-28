@@ -16,20 +16,25 @@ export const assets = {
 
 export const dummyTrailers = [
   {
-    image: "https://img.youtube.com/vi/WpW36ldAqnM/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=WpW36ldAqnM",
+    image: "https://peach.blender.org/wp-content/uploads/bbb-splash.png",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
   },
   {
-    image: "https://img.youtube.com/vi/-sAOWhvheK8/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=-sAOWhvheK8",
+    image:
+      "https://upload.wikimedia.org/wikipedia/commons/e/e4/Elephants_Dream_cover.jpg",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
   },
   {
-    image: "https://img.youtube.com/vi/1pHDWnXmK7Y/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=1pHDWnXmK7Y",
+    image: "https://i.ytimg.com/vi/TKMj7eZ_rD0/maxresdefault.jpg",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   },
   {
-    image: "https://img.youtube.com/vi/umiKiW4En9g/maxresdefault.jpg",
-    videoUrl: "https://www.youtube.com/watch?v=umiKiW4En9g",
+    image: "https://images-cdn.ispot.tv/ad/75OO/default-large.jpg",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
   },
 ];
 
