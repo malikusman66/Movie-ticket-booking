@@ -32,9 +32,10 @@ export const dummyTrailers = [
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
   },
   {
-    image: "https://images-cdn.ispot.tv/ad/75OO/default-large.jpg",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWmJzNlsy5zboOt1_C41ShlVceOFbw9iI5DQ&s",
     videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4",
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
   },
 ];
 
