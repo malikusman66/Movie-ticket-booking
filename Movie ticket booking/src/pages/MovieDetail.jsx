@@ -9,6 +9,7 @@ import DateSelect from "../components/DateSelect";
 const MovieDetail = () => {
   const { id } = useParams();
   const [show, setShow] = useState(null);
+  const [showTrailer, setShowTrailer] = useState(false);
 
   useEffect(() => {
     const getShow = async () => {
@@ -55,10 +56,33 @@ const MovieDetail = () => {
           </p>
 
           <div className="flex items-center flex-wrap gap-4 mt-6">
-            <button className="flex items-center gap-2 px-7 py-3 bg-gray-800 hover:bg-gray-900 transition rounded-md font-medium cursor-pointer active:scale-95">
+            <button
+              onClick={() => setShowTrailer(true)}
+              className="flex items-center gap-2 px-7 py-3 bg-gray-800 hover:bg-gray-900 transition rounded-md font-medium cursor-pointer active:scale-95"
+            >
               <PlayCircleIcon className="w-5 h-5" />
               Watch Trailer
             </button>
+            {showTrailer && (
+              <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
+                <div className="max-w-[960px] w-full aspect-video relative">
+                  <button
+                    onClick={() => setShowTrailer(false)}
+                    className="absolute top-2 right-2 bg-white p-2 rounded-full"
+                  >
+                    ✕
+                  </button>
+                  <video
+                    src="YOUR_TRAILER_URL_HERE"
+                    controls
+                    autoPlay
+                    muted
+                    className="w-full h-full"
+                  />
+                </div>
+              </div>
+            )}
+
             <a
               href="#dateSelect"
               className="px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95"
