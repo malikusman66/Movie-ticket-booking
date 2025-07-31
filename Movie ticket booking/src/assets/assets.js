@@ -37,6 +37,18 @@ export const dummyTrailers = [
     videoUrl:
       "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
   },
+  {
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPldCgSEoNX12isdE1DVEDTcNBGJkSpxESyg&s",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
+  },
+  {
+    image:
+      "https://studio.blender.org/files/cache/33/82/3382e17dd30d77d8175ef361441f408d.jpg",
+    videoUrl:
+      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+  },
 ];
 
 const dummyCastsData = [
@@ -138,6 +150,7 @@ export const dummyShowsData = [
       "https://image.tmdb.org/t/p/original/dDlfjR7gllmr8HTeN6rfrYhTdwX.jpg",
     backdrop_path:
       "https://image.tmdb.org/t/p/original/op3qmNhvwEvyT7UFyPbIfQmKriB.jpg",
+    videoUrl: "https://youtu.be/CMyrp5Vk3mU?si=zSA3liti83z1iBwM",
     genres: [
       { id: 28, name: "Action" },
       { id: 14, name: "Fantasy" },
