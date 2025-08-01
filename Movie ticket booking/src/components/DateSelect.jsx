@@ -10,11 +10,11 @@ const DateSelect = ({ dateTime, id = "dateSelect" }) => {
   const [selected, setSelected] = useState(null);
 
   const onBookHandler = () => {
-    if (selected) {
+    if (!selected) {
       return toast("Please select a date first!");
     }
     navigate(`/movies/${id}/${selected}`);
-    scrollTo(0, 0);
+    window.scrollTo(0, 0);
   };
 
   return (

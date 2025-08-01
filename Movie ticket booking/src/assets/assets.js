@@ -150,7 +150,7 @@ export const dummyShowsData = [
       "https://image.tmdb.org/t/p/original/dDlfjR7gllmr8HTeN6rfrYhTdwX.jpg",
     backdrop_path:
       "https://image.tmdb.org/t/p/original/op3qmNhvwEvyT7UFyPbIfQmKriB.jpg",
-    videoUrl: "https://youtu.be/CMyrp5Vk3mU?si=zSA3liti83z1iBwM",
+    videoUrl: "https://youtu.be/2xO4XPCgWWw?si=Y2CR3FWMBom6_px6",
     genres: [
       { id: 28, name: "Action" },
       { id: 14, name: "Fantasy" },
@@ -174,6 +174,7 @@ export const dummyShowsData = [
       "https://image.tmdb.org/t/p/original/juA4IWO52Fecx8lhAsxmDgy3M3.jpg",
     backdrop_path:
       "https://image.tmdb.org/t/p/original/icFWIk1KfkWLZnugZAJEDauNZ94.jpg",
+    videoUrl: "https://youtu.be/rZfwvLe961k?si=Y2CR3FWMBom6_px6",
     genres: [
       { id: 27, name: "Horror" },
       { id: 9648, name: "Mystery" },
@@ -196,6 +197,7 @@ export const dummyShowsData = [
       "https://image.tmdb.org/t/p/original/mKKqV23MQ0uakJS8OCE2TfV5jNS.jpg",
     backdrop_path:
       "https://image.tmdb.org/t/p/original/7Zx3wDG5bBtcfk8lcnCWDOLM4Y4.jpg",
+    videoUrl: "https://youtu.be/m5fMyIImwEY?si=blEcBcdBJ23eGAqn",
     genres: [
       { id: 10751, name: "Family" },
       { id: 35, name: "Comedy" },
@@ -219,6 +221,7 @@ export const dummyShowsData = [
       "https://image.tmdb.org/t/p/original/ubP2OsF3GlfqYPvXyLw9d78djGX.jpg",
     backdrop_path:
       "https://image.tmdb.org/t/p/original/65MVgDa6YjSdqzh7YOA04mYkioo.jpg",
+    videoUrl: "https://youtu.be/HAQfDRvrU0s?si=3mFFT5Np6LiM6e1Q",
     genres: [
       { id: 28, name: "Action" },
       { id: 80, name: "Crime" },
