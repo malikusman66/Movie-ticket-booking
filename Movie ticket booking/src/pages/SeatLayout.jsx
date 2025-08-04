@@ -103,7 +103,7 @@ const SeatLayout = () => {
         </div>
         <button
           onClick={() => navigate("/my-bookings")}
-          className="flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95 mt-6"
+          className="flex items-center gap-2 px-8 py-3 bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95 mt-12"
         >
           Proceed to Checkout
           <ArrowRightIcon strokeWidth={3} className="w-4 h-4" />
