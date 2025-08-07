@@ -54,7 +54,8 @@ const Dashboard = () => {
   }, []);
 
   return !loading ? (
-    <>
+    <div className="min-h-screen px-6 md:px-16 lg:px-40 py-20 bg-black text-white relative">
+      {/* Black background with white text */}
       <Title text1="Admin" text2="Dashboard" />
 
       <div className="relative flex flex-wrap gap-4 mt-6">
@@ -63,7 +64,7 @@ const Dashboard = () => {
           {dashboardCards.map((card, index) => (
             <div
               key={index}
-              className="flex items-center justify-between px-4 py-3 bg-primary/10 border border-primary/20 rounded-md max-w-50 w-full"
+              className="flex items-center justify-between px-4 py-3 bg-white/10 border border-white/20 rounded-md max-w-50 w-full"
             >
               <div>
                 <h1 className="text-sm">{card.title}</h1>
@@ -74,7 +75,7 @@ const Dashboard = () => {
           ))}
         </div>
       </div>
-    </>
+    </div>
   ) : (
     <Loading />
   );
