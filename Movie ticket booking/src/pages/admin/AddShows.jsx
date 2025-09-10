@@ -1,102 +1,80 @@
 import React, { useState } from "react";
-import Title from "../../components/admin/Title";
+import { dummyMoviesData } from "../../assets/assets";
 
-const AddShows = () => {
-  const [formData, setFormData] = useState({
-    movieTitle: "",
-    poster: "",
-    showDateTime: "",
-    price: "",
-  });
+const AddShows = ({ shows, setShows, movies = [] }) => {
+  const [selectedMovie, setSelectedMovie] = useState(null);
+  const [price, setPrice] = useState("");
+  const [dateTime, setDateTime] = useState("");
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const handleAddShow = () => {
+    if (!selectedMovie || !price || !dateTime) return;
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log("New Show Added:", formData);
+    const newShow = {
+      _id: Date.now().toString(),
+      movie: selectedMovie,
+      showPrice: parseFloat(price),
+      showDateTime: dateTime,
+      poster: selectedMovie.poster,
+      rating: selectedMovie.rating,
+    };
 
-    // Reset form after submit
-    setFormData({
-      movieTitle: "",
-      poster: "",
-      showDateTime: "",
-      price: "",
-    });
+    // Add the new show to the beginning of the list
+    setShows([newShow, ...shows]);
+
+    // Reset input fields
+    setSelectedMovie(null);
+    setPrice("");
+    setDateTime("");
   };
 
   return (
-    <div className="bg-black min-h-screen text-white p-6">
-      <Title text1="Add" text2="Show" />
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-4">Add a New Show</h2>
 
-      <form
-        onSubmit={handleSubmit}
-        className="mt-6 max-w-lg bg-[#1f1f1f] p-6 rounded-lg shadow-md space-y-4"
-      >
-        {/* Movie Title */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">Movie Title</label>
-          <input
-            type="text"
-            name="movieTitle"
-            value={formData.movieTitle}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 rounded-md bg-[#2b2b2b] border border-gray-600 text-white"
-          />
-        </div>
+      {/* Movie Selection */}
+      <div className="flex space-x-4 overflow-x-auto mb-4">
+        {(movies.length ? movies : dummyMoviesData).map((movie) => (
+          <div
+            key={movie.id}
+            onClick={() => setSelectedMovie(movie)}
+            className={`min-w-[120px] cursor-pointer rounded-lg overflow-hidden border-2 ${
+              selectedMovie?.id === movie.id
+                ? "border-pink-500"
+                : "border-transparent"
+            }`}
+          >
+            <img
+              src={movie.poster}
+              alt={movie.title}
+              className="w-full h-48 object-cover"
+            />
+            <p className="text-sm mt-1 text-center">{movie.title}</p>
+          </div>
+        ))}
+      </div>
 
-        {/* Poster URL */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">Poster URL</label>
-          <input
-            type="text"
-            name="poster"
-            value={formData.poster}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 rounded-md bg-[#2b2b2b] border border-gray-600 text-white"
-          />
-        </div>
-
-        {/* Show Date & Time */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">
-            Show Date & Time
-          </label>
-          <input
-            type="datetime-local"
-            name="showDateTime"
-            value={formData.showDateTime}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 rounded-md bg-[#2b2b2b] border border-gray-600 text-white"
-          />
-        </div>
-
-        {/* Price */}
-        <div>
-          <label className="block mb-1 text-sm font-medium">Price</label>
-          <input
-            type="number"
-            name="price"
-            value={formData.price}
-            onChange={handleChange}
-            required
-            className="w-full px-3 py-2 rounded-md bg-[#2b2b2b] border border-gray-600 text-white"
-          />
-        </div>
-
-        {/* Submit */}
+      {/* Show Inputs */}
+      <div className="flex flex-col md:flex-row gap-4 items-center mb-4">
+        <input
+          type="number"
+          placeholder="Enter show price"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+          className="p-2 rounded-md bg-[#1f1f1f] border border-gray-700 text-white"
+        />
+        <input
+          type="datetime-local"
+          value={dateTime}
+          onChange={(e) => setDateTime(e.target.value)}
+          className="p-2 rounded-md bg-[#1f1f1f] border border-gray-700 text-white"
+        />
         <button
-          type="submit"
-          className="w-full bg-red-600 hover:bg-red-700 px-4 py-2 rounded-md text-white font-semibold"
+          onClick={handleAddShow}
+          className="bg-pink-600 px-4 py-2 rounded-md hover:bg-pink-500"
         >
           Add Show
         </button>
-      </form>
+      </div>
     </div>
   );
 };

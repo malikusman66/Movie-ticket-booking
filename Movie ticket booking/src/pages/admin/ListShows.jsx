@@ -10,19 +10,19 @@ const ListShows = () => {
   const [shows, setShows] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
 
-  const getAllShows = async () => {
+  // Fetch all shows (simulated API call)
+  const fetchShows = async () => {
     try {
-      // Simulate API call
-      setShows(dummyShowsData || []);
+      setShows(dummyShowsData); // always use actual movie data
     } catch (error) {
-      console.error("Error fetching shows:", error);
+      console.error("Failed to fetch shows:", error);
     } finally {
-      setIsLoading(false); // ✅ always stop loading
+      setIsLoading(false); // stop loading
     }
   };
 
   useEffect(() => {
-    getAllShows();
+    fetchShows();
   }, []);
 
   if (isLoading) return <Loading />;
@@ -44,32 +44,35 @@ const ListShows = () => {
 
           <tbody>
             {shows.length > 0 ? (
-              shows.map((show, index) => (
+              shows.map((show) => (
                 <tr
-                  // ✅ use unique key: _id if available, else fallback
-                  key={
-                    show._id ||
-                    `${show.movie.title}-${show.showDateTime}-${index}`
-                  }
+                  key={show._id}
                   className="bg-[#1f1f1f] border-b border-[#3c0d0d] even:bg-[#2b2b2b]"
                 >
-                  <td className="p-3 pl-5">{show.movie?.title || "N/A"}</td>
+                  {/* Use optional chaining to prevent errors */}
+                  <td className="p-3 pl-5">
+                    {show.movie?.title || "Unknown Movie"}
+                  </td>
                   <td className="p-3">
-                    {show.showDateTime ? dateFormat(show.showDateTime) : "N/A"}
+                    {show.showDateTime
+                      ? dateFormat(show.showDateTime)
+                      : "Unknown Time"}
                   </td>
                   <td className="p-3">
                     {currency}{" "}
-                    {show.showPrice
+                    {show.showPrice != null
                       ? Number(show.showPrice).toFixed(2)
                       : "0.00"}
                   </td>
-                  <td className="p-3">{show.totalSeats || "N/A"}</td>
+                  <td className="p-3">
+                    {show.totalSeats != null ? show.totalSeats : "0"}
+                  </td>
                 </tr>
               ))
             ) : (
               <tr>
                 <td colSpan="4" className="p-4 text-center text-gray-400">
-                  No shows found.
+                  No shows available.
                 </td>
               </tr>
             )}
