@@ -1,5 +1,5 @@
 import React from "react";
-import { dummyShowsData } from "../assets/assets";
+import { dummyShowsData } from "../../assets/assets";
 import MovieCard from "../components/MovieCard";
 import BlueCircle from "../components/BlurCircle";
 
