@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { dummyMoviesData } from "../../assets/assets";
+import { dummyShowsData } from "../../assets/assets.js";
 
-const AddShows = ({ shows, setShows, movies = [] }) => {
+const AddShows = ({ shows, setShows, movies = dummyShowsData }) => {
   const [selectedMovie, setSelectedMovie] = useState(null);
   const [price, setPrice] = useState("");
   const [dateTime, setDateTime] = useState("");
@@ -18,22 +18,19 @@ const AddShows = ({ shows, setShows, movies = [] }) => {
       rating: selectedMovie.rating,
     };
 
-    // Add the new show to the beginning of the list
-    setShows([newShow, ...shows]);
-
-    // Reset input fields
+    setShows([newShow, ...(shows || [])]);
     setSelectedMovie(null);
     setPrice("");
     setDateTime("");
   };
 
   return (
-    <div className="p-4">
-      <h2 className="text-xl font-bold mb-4">Add a New Show</h2>
+    <div>
+      <h2 className="text-xl font-bold mb-4">Add New Show</h2>
 
       {/* Movie Selection */}
       <div className="flex space-x-4 overflow-x-auto mb-4">
-        {(movies.length ? movies : dummyMoviesData).map((movie) => (
+        {movies.map((movie) => (
           <div
             key={movie.id}
             onClick={() => setSelectedMovie(movie)}
