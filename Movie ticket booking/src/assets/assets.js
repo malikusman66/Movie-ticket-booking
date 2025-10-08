@@ -16,38 +16,28 @@ export const assets = {
 
 export const dummyTrailers = [
   {
-    image: "https://peach.blender.org/wp-content/uploads/bbb-splash.png",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4",
+    id: 1,
+    title: "Inception",
+    image: "https://m.media-amazon.com/images/I/51zUbui+gbL._AC_.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=YoHD9XEInc0",
   },
   {
-    image:
-      "https://upload.wikimedia.org/wikipedia/commons/e/e4/Elephants_Dream_cover.jpg",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ElephantsDream.mp4",
+    id: 2,
+    title: "Interstellar",
+    image: "https://m.media-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=zSWdZVtXT7E",
   },
   {
-    image: "https://i.ytimg.com/vi/TKMj7eZ_rD0/maxresdefault.jpg",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4",
+    id: 3,
+    title: "The Dark Knight",
+    image: "https://m.media-amazon.com/images/I/51EbJjlYJ-L._AC_.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=EXeTwQWrcwY",
   },
   {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTWmJzNlsy5zboOt1_C41ShlVceOFbw9iI5DQ&s",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/VolkswagenGTIReview.mp4",
-  },
-  {
-    image:
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPldCgSEoNX12isdE1DVEDTcNBGJkSpxESyg&s",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/WeAreGoingOnBullrun.mp4",
-  },
-  {
-    image:
-      "https://studio.blender.org/files/cache/33/82/3382e17dd30d77d8175ef361441f408d.jpg",
-    videoUrl:
-      "http://commondatastorage.googleapis.com/gtv-videos-bucket/sample/TearsOfSteel.mp4",
+    id: 4,
+    title: "Avatar",
+    image: "https://m.media-amazon.com/images/I/41kTVLeW1CL._AC_.jpg",
+    videoUrl: "https://www.youtube.com/watch?v=5PSNL1qE6VY",
   },
 ];
 
