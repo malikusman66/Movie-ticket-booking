@@ -30,6 +30,11 @@ const Navbar = () => {
         justifyContent: "space-between",
         alignItems: "center",
         padding: "1.25rem 1.5rem",
+        background:
+          "linear-gradient(90deg, rgba(10,3,3,0.96) 0%, rgba(38,9,13,0.98) 45%, rgba(10,3,3,0.96) 100%)",
+        borderBottom: "1px solid rgba(236, 200, 143, 0.25)",
+        boxShadow: "0 18px 40px rgba(0,0,0,0.65)",
+        zIndex: 40,
       }}
     >
       <Link style={{ flex: isMobile ? 1 : "unset" }}>
@@ -118,7 +123,7 @@ const Navbar = () => {
               style={{
                 marginTop: "0.5rem",
                 padding: "0.5rem 1.5rem",
-                backgroundColor: "#FF5722",
+                backgroundColor: "#b88a2a",
                 border: "none",
                 borderRadius: "9999px",
                 cursor: "pointer",
@@ -252,7 +257,7 @@ const Navbar = () => {
             style={{
               marginTop: "0.5rem",
               padding: "0.5rem 1.5rem",
-              backgroundColor: "#FF5722",
+              backgroundColor: "#b88a2a",
               border: "none",
               borderRadius: "9999px",
               cursor: "pointer",
@@ -270,7 +275,7 @@ const Navbar = () => {
 
 // Shared link style
 const linkStyle = {
-  color: "#fff",
+  color: "#fbe9cf",
   textDecoration: "none",
   fontWeight: "500",
 };

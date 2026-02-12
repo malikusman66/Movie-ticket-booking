@@ -50,14 +50,16 @@ const MovieDetail = () => {
   if (!show) return <Loading />;
 
   return (
-    <div className="px-6 md:px-16 lg:px-40 pt-10 md:pt-20">
+    <div className="fade-in-up px-6 md:px-16 lg:px-40 pt-10 md:pt-20">
       <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
-        <img
-          src={show.movie.poster_path}
-          alt=""
-          className="max-md:mx-auto rounded-xl h-104 max-w-70 object-cover"
-        />
-        <div className="relative flex flex-col gap-4">
+        <div className="relative max-md:mx-auto">
+          <img
+            src={show.movie.poster_path}
+            alt=""
+            className="rounded-xl h-104 max-w-70 object-cover shadow-[0_26px_60px_rgba(0,0,0,0.85)] transition-transform duration-500 hover:-translate-y-1 hover:scale-[1.02]"
+          />
+        </div>
+        <div className="relative flex flex-col gap-4 bg-black/40 border border-[#4a1f24]/70 rounded-3xl px-6 py-5 shadow-[0_28px_60px_rgba(0,0,0,0.85)] hover-glow-soft">
           <BlueCircle top="-100px" left="-100px" />
           <p className="text-primary">ENGLISH</p>
           <h1 className="text-4xl font-semibold max-w-96 text-balance">
@@ -82,18 +84,18 @@ const MovieDetail = () => {
                 setCurrentTrailer(dummyTrailers[0]);
                 setShowTrailer(true);
               }}
-              className="flex items-center gap-2 px-7 py-3 bg-gray-800 hover:bg-gray-900 transition rounded-md font-medium cursor-pointer active:scale-95"
+              className="flex items-center gap-2 px-7 py-3 bg-gray-800 hover:bg-gray-900 transition-transform transition-colors duration-200 rounded-md font-medium cursor-pointer active:scale-95"
             >
               <PlayCircleIcon className="w-5 h-5" />
               Watch Trailer
             </button>
 
             {showTrailer && currentTrailer && (
-              <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50">
-                <div className="max-w-[960px] w-full aspect-video relative">
+              <div className="fixed inset-0 bg-black/80 flex items-center justify-center z-50 fade-in-slow">
+                <div className="max-w-[960px] w-full aspect-video relative transform transition-transform duration-300">
                   <button
                     onClick={() => setShowTrailer(false)}
-                    className="absolute top-2 right-2 bg-black p-2 z-20"
+                    className="absolute top-2 right-2 bg-black/80 hover:bg-black p-2 z-20 transition-colors duration-150"
                   >
                     ✕
                   </button>
@@ -113,11 +115,11 @@ const MovieDetail = () => {
 
             <a
               href="#dateSelect"
-              className="px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition rounded-md font-medium cursor-pointer active:scale-95"
+              className="px-10 py-3 text-sm bg-primary hover:bg-primary-dull transition-transform transition-colors duration-200 rounded-md font-medium cursor-pointer active:scale-95"
             >
               Buy Tickets
             </a>
-            <button className="flex items-center gap-2 px-4 py-3 bg-gray-800 hover:bg-gray-900 transition rounded-md font-medium cursor-pointer active:scale-95">
+            <button className="flex items-center gap-2 px-4 py-3 bg-gray-800 hover:bg-gray-900 transition-transform transition-colors duration-200 rounded-md font-medium cursor-pointer active:scale-95">
               <Heart className="w-5 h-5" />
             </button>
           </div>

@@ -1,9 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-primary: #f84565;
-  --color-primary-dull: #d63854;
+  --color-primary: #b71c1c;
+  --color-primary-dull: #7f1010;
 }
 
 * {
@@ -13,10 +14,51 @@
 }
 
 body {
-  color: white;
-  background-color: #09090b;
+  color: #f5f0e6;
+  background: radial-gradient(
+    circle at top,
+    #2a0005 0,
+    #050308 45%,
+    #020106 100%
+  );
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Playfair Display", serif;
+  letter-spacing: 0.04em;
 }
 
 .no-scrollbar {
   scrollbar-width: none;
+}
+
+/* Classic, subtle entrance + hover animations */
+.fade-in-up {
+  animation: fade-in-up 0.7s ease-out both;
+}
+
+.fade-in-slow {
+  animation: fade-in-up 1s ease-out both;
+}
+
+.hover-glow-soft {
+  transition: box-shadow 250ms ease, transform 250ms ease, background-color 200ms ease;
+}
+
+.hover-glow-soft:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9);
+  transform: translateY(-2px);
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
